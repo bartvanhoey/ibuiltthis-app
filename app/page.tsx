@@ -13,7 +13,7 @@ export default function Home() {
       <FeaturedProducts />
       <Suspense
         fallback={
-          <div>
+          <div className="wrapper flex items-center gap-2">
             Loading Recently Launched Products...
             <LoaderIcon className="size-4 animate-spin" />
           </div>
