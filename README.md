@@ -12,12 +12,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Technologies Used
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Neon
-- Drizzle ORM
-- Clerk
+- Next.js: A React framework for building web applications.
+- TypeScript : A strongly typed programming language that builds on JavaScript.
+- Tailwind CSS : A utility-first CSS framework.
+- Neon: A serverless Postgres database platform.
+- Drizzle ORM : A type-safe ORM for TypeScript and JavaScript.
+- Clerk : A user management and authentication service.
+- Zod : A TypeScript-first schema declaration and validation library.
 
 ## Drizzle Commands
 

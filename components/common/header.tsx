@@ -3,20 +3,17 @@ import {
   HomeIcon,
   SparkleIcon,
   SparklesIcon,
-  UserIcon,
 } from "lucide-react";
 import Link from "next/link";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Button } from "../ui/button";
 import {
   SignedIn,
   SignedOut,
-  SignIn,
   SignInButton,
-  SignUp,
   SignUpButton,
-  UserButton,
 } from "@clerk/nextjs";
+import CustomUserButton from "./custom-user-button";
 
 const Logo = () => {
   return (
@@ -59,7 +56,7 @@ export default function header() {
             </Link>
           </nav>
           <div className="flex items-center gap-3">
-            <Suspense fallback={<div>Loading...</div>} >
+            <Suspense fallback={<div>Loading...</div>}>
               <SignedOut>
                 <SignInButton />
                 <SignUpButton>
@@ -72,7 +69,8 @@ export default function header() {
                     <SparklesIcon className="size-4" /> Submit Project
                   </Link>
                 </Button>
-                <UserButton />
+
+                <CustomUserButton />
               </SignedIn>
             </Suspense>
           </div>

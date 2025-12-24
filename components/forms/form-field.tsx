@@ -14,7 +14,7 @@ interface FormFieldProps {
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
-  error: string;
+  errors: string[];
   helperText?: string;
   textarea?: boolean;
 }
@@ -26,7 +26,7 @@ export const FormField = ({
   placeholder,
   required,
   onChange,
-  error,
+  errors: error,
   helperText,
   textarea,
 }: FormFieldProps) => {
@@ -49,14 +49,16 @@ export const FormField = ({
           name={name}
           placeholder={placeholder}
           required={required}
-          onChange={onChange as (e: React.ChangeEvent<HTMLInputElement>) => void}
+          onChange={
+            onChange as (e: React.ChangeEvent<HTMLInputElement>) => void
+          }
         />
       )}
 
       {helperText && (
         <p className="text-xs text-muted-foreground">{helperText}</p>
       )}
-      {error && <p className="text-sm text-destructive">{error}</p>}
+      {error && <p className="text-sm text-destructive">{error?.join(", ")}</p>}
     </div>
   );
 };
